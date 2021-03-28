@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="600.0" style="-fx-background-color: #CFF4D2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employee.system.SalariedEmployeeController">
+   <children>
+      <Label layoutX="38.0" layoutY="57.0" prefHeight="70.0" prefWidth="364.0" text="Salaried Employee" textFill="#055168">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_RIGHT" layoutX="37.0" layoutY="157.0" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: #CFF4D2;" text="Name :">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_RIGHT" layoutX="37.0" layoutY="200.0" prefHeight="27.0" prefWidth="96.0" text="ID :">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_RIGHT" layoutX="37.0" layoutY="250.0" prefHeight="27.0" prefWidth="96.0" text="Designation :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="salary" alignment="TOP_RIGHT" layoutX="37.0" layoutY="291.0" prefHeight="27.0" prefWidth="96.0" text="Salary:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="56.0" layoutY="395.0" mnemonicParsing="false" onAction="#submit" prefHeight="43.0" prefWidth="408.0" text="Submit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="484.0" layoutY="395.0" mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="68.0" text="Back">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="name" layoutX="186.0" layoutY="158.0" prefHeight="25.0" prefWidth="249.0" />
+      <TextField fx:id="id" layoutX="186.0" layoutY="201.0" prefHeight="25.0" prefWidth="249.0" />
+      <TextField fx:id="designation" layoutX="186.0" layoutY="251.0" prefHeight="25.0" prefWidth="249.0" />
+      <TextField layoutX="186.0" layoutY="292.0" prefHeight="25.0" prefWidth="249.0" />
+   </children>
+</AnchorPane>
