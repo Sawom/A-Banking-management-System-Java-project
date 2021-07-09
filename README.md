@@ -1,6 +1,6 @@
 # Java-project
 
-## A Banking System
+## A Banking management System
 Here I create a graphical user interphase application using java. An user create a new account , deposit money, widraw money , display perticular account and check balance.
 All information will save a text file name with five digit random number.
 
