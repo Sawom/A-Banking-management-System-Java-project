@@ -23,15 +23,19 @@ public class SavingAccount implements Serializable {
     Label label1 = new Label("Enter Member Name");
     Label label2 = new Label("Enter Account Balance:");
     Label label3 = new Label("Enter Max With limit");
+    Label lblResult = new Label("");
 
     Add.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
         try {
           Random rand = new Random();
-          String accountNumber = Integer.toString(rand.nextInt(10)) + Integer.toString(rand.nextInt(10))
-              + Integer.toString(rand.nextInt(10)) + Integer.toString(rand.nextInt(10))
-              + Integer.toString(rand.nextInt(10));
+          String accountNumber = Integer.toString(rand.nextInt(10)) +
+                                 Integer.toString(rand.nextInt(10)) +
+                                 Integer.toString(rand.nextInt(10)) +
+                                 Integer.toString(rand.nextInt(10)) +
+                                 Integer.toString(rand.nextInt(10));
+
           BufferedWriter writer = new BufferedWriter(new FileWriter(accountNumber+".txt"));
           String line = accountNumber + ":"+ tfMemberName.getText() + ":" 
               + Integer.parseInt(tfAccountBalance.getText()) + ":"
@@ -39,19 +43,21 @@ public class SavingAccount implements Serializable {
           writer.write(line, 0, line.length());
           writer.close();
           System.out.println("Successfully wrote to the file.");
+          lblResult.setText("Success! Account Created. Number: " + accountNumber);
         } catch (IOException e) {
           System.out.println("An error occurred.");
           e.printStackTrace();
+          lblResult.setText("Error occurred while creating account!");
         }
       }
     });
 
-    VBox vbox = new VBox();
+    VBox vbox = new VBox(10);
     tfMemberName.setMaxWidth(150);
     tfAccountBalance.setMaxWidth(150);
     tfMaxwithLimit.setMaxWidth(150);
 
-    vbox.getChildren().addAll(label1, tfMemberName, label2, tfAccountBalance, label3, tfMaxwithLimit, Add);
+    vbox.getChildren().addAll(label1, tfMemberName, label2, tfAccountBalance, label3, tfMaxwithLimit, Add, lblResult);
     Scene SecondScene = new Scene(vbox, 500, 250);
     Stage newWindow = new Stage();
     newWindow.setTitle("Enter Saving Account Data");
